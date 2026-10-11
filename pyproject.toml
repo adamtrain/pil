@@ -1,0 +1,58 @@
+[project]
+name = "pil"
+version = "0.1.0"
+description = "The prompt invocation library for Claude Code: keep your prompts in one place, fill them in, and run them from the CLI or a TUI."
+readme = "README.md"
+license = "CC0-1.0"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Adam Train", email = "adam@adametrain.com" }
+]
+requires-python = ">=3.13"
+keywords = ["prompts", "claude", "claude-code", "cli", "tui", "clipboard"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "textual>=8.2.8",
+    "typer>=0.27.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/adamtrain/pil"
+Repository = "https://github.com/adamtrain/pil"
+Issues = "https://github.com/adamtrain/pil/issues"
+
+[project.scripts]
+pil = "pil.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.17.0",
+    "ty>=0.0.86",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF", "C4", "PTH"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

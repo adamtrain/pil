@@ -1,0 +1,266 @@
+/* ── Browser ─────────────────────────────────────────────────────────────── */
+
+#filter {
+    margin: 1 1 0 1;
+    border: round $surface-lighten-2;
+    background: transparent;
+}
+
+#filter:focus {
+    border: round $primary;
+}
+
+#browser {
+    margin: 0 1;
+    height: 1fr;
+}
+
+#prompts {
+    width: 34;
+    height: 100%;
+    padding: 0 1;
+    border: round $surface-lighten-2;
+    background: transparent;
+    border-title-color: $text-muted;
+    border-subtitle-color: $text-muted;
+}
+
+#prompts:focus {
+    border: round $primary;
+}
+
+#prompts > .option-list--option-disabled {
+    color: $text-muted;
+}
+
+#preview {
+    width: 1fr;
+    height: 100%;
+    padding: 1 2;
+    border: round $surface-lighten-2;
+}
+
+/* ── Dialogs ─────────────────────────────────────────────────────────────── */
+
+ModalScreen {
+    align: center middle;
+    background: $background 60%;
+}
+
+.dialog {
+    width: 60;
+    max-width: 90%;
+    height: auto;
+    max-height: 90%;
+    padding: 1 2 2 2;
+    border: round $primary;
+    background: $surface;
+}
+
+.dialog.wide {
+    width: 92;
+}
+
+.dialog-title {
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+/* Docked, so a long form can never push the buttons out of sight. */
+.dialog-buttons {
+    dock: bottom;
+    height: 1;
+    align-horizontal: right;
+}
+
+.dialog-buttons Button {
+    padding: 0 2;
+}
+
+.dialog-buttons Button {
+    margin-left: 2;
+}
+
+.hint {
+    color: $text-muted;
+}
+
+/* ── Forms ───────────────────────────────────────────────────────────────── */
+
+.field {
+    height: auto;
+    margin-bottom: 1;
+}
+
+.field-name {
+    width: 14;
+    padding-right: 2;
+    color: $text-muted;
+    text-align: right;
+}
+
+.field Input,
+.field Select {
+    width: 1fr;
+}
+
+.dialog Input,
+.dialog Select > SelectCurrent {
+    background: $boost;
+}
+
+#fields {
+    height: auto;
+    max-height: 16;
+    margin-top: 1;
+}
+
+#filled-box {
+    height: auto;
+    max-height: 12;
+    margin-bottom: 1;
+    padding: 0 1;
+    border: round $surface-lighten-2;
+    border-title-color: $text-muted;
+}
+
+/* ── Result ──────────────────────────────────────────────────────────────── */
+
+#status {
+    margin: 1 2 0 2;
+    height: 1;
+}
+
+#result {
+    margin: 1;
+    padding: 1 2;
+    border: round $surface-lighten-2;
+}
+
+#result:focus {
+    border: round $primary;
+}
+
+#waiting {
+    height: 3;
+}
+
+#result Markdown {
+    padding: 0;
+    background: transparent;
+}
+
+/* ── Shortening ──────────────────────────────────────────────────────────── */
+
+#compare {
+    height: auto;
+}
+
+.pane {
+    width: 1fr;
+    height: auto;
+    padding: 0 1;
+    border: round $surface-lighten-2;
+    border-title-color: $text-muted;
+}
+
+#note {
+    margin-bottom: 1;
+}
+
+/* ── Editor ──────────────────────────────────────────────────────────────── */
+
+#editor {
+    margin: 1 1 0 1;
+}
+
+#form {
+    width: 1fr;
+}
+
+#form .field {
+    margin-bottom: 0;
+}
+
+#form .field-name {
+    width: 8;
+}
+
+#kind {
+    width: 20;
+}
+
+#kind-summary {
+    margin: 0 0 1 8;
+}
+
+#body {
+    width: 100%;
+    height: 1fr;
+    margin-top: 1;
+    border: round $surface-lighten-2;
+    border-title-color: $text-muted;
+}
+
+#body:focus {
+    border: round $primary;
+}
+
+#variables {
+    width: 44;
+    margin-left: 1;
+    padding: 0 1;
+    border: round $surface-lighten-2;
+    border-title-color: $text-muted;
+}
+
+.card {
+    height: auto;
+    margin-bottom: 1;
+    padding-bottom: 1;
+    border-bottom: dashed $surface-lighten-2;
+}
+
+.card-head,
+.card-row {
+    height: 1;
+}
+
+.card-head {
+    margin-bottom: 1;
+}
+
+.card-name {
+    width: 1fr;
+    color: $primary;
+    text-style: bold;
+}
+
+.card-type {
+    width: 14;
+}
+
+.card-label {
+    width: 9;
+    color: $text-muted;
+}
+
+.card-row Input,
+.card-row Select {
+    width: 1fr;
+}
+
+.card .for-choice,
+.card .for-value,
+.card .for-text,
+.card .for-toggle {
+    display: none;
+}
+
+.card.type-choice .for-choice,
+.card.type-choice .for-value,
+.card.type-text .for-value,
+.card.type-text .for-text,
+.card.type-toggle .for-toggle {
+    display: block;
+}
